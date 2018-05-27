@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
+import Admin from './Admin'
+import Login from './Login'
 import Header from './Header'
 import Menu from './Menu'
 import Home from './Home'
@@ -17,9 +19,11 @@ class App extends Component {
           <Header />
           <Menu />
           <Route exact path='/' component={Home} />
-          <Route exact path='/sobre' component={Sobre} />
-          <Route exact path='/campanhas' component={Campanhas} />
-          <Route exact path='/contato' component={Contato} />
+          <Route path='/sobre' component={Sobre} />
+          <Route path='/campanhas' component={Campanhas} />
+          <Route path='/contato' component={Contato} />
+          <Route path='/login' component={Login} />
+          <Route path='/admin' component={Admin} />
           <Footer />
         </div>
       </Router>
