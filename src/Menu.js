@@ -1,27 +1,28 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Menu = () => (
   <nav className='navbar navbar-expand-lg navbar-dark py-lg-4' id='mainNav'>
     <div className='container'>
-      <a className='navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none' href='#'>Asilo Melhor Idade</a>
+      <Link to='/' className='navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none'>
+        Asilo Melhor Idade
+      </Link>
       <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation'>
         <span className='navbar-toggler-icon' />
       </button>
       <div className='collapse navbar-collapse' id='navbarResponsive'>
         <ul className='navbar-nav mx-auto'>
           <li className='nav-item active px-lg-4'>
-            <a className='nav-link text-uppercase text-expanded' href='index.html'>
-              Início<span className='sr-only'>(current)</span>
-            </a>
+            <Link to='/' className='nav-link text-uppercase text-expanded'>Início<span className='sr-only'>(current)</span></Link>
           </li>
           <li className='nav-item px-lg-4'>
-            <a className='nav-link text-uppercase text-expanded' href='about.html'>Sobre</a>
+            <Link to='/sobre' className='nav-link text-uppercase text-expanded'>Sobre</Link>
           </li>
           <li className='nav-item px-lg-4'>
-            <a className='nav-link text-uppercase text-expanded' href='products.html'>Campanhas</a>
+            <Link to='/campanhas' className='nav-link text-uppercase text-expanded'>Campanhas</Link>
           </li>
           <li className='nav-item px-lg-4'>
-            <a className='nav-link text-uppercase text-expanded' href='store.html'>Contato</a>
+            <Link to='/contato' className='nav-link text-uppercase text-expanded'>Contato</Link>
           </li>
         </ul>
       </div>
