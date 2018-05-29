@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 import base from './base'
-
 class Campanhas extends Component {
   constructor (props) {
     super(props)
@@ -19,10 +19,24 @@ class Campanhas extends Component {
     })
   }
 
-  renderCampanha (campanha) {
-    console.log(campanha)
+  handleDonate (key) {
+    axios
+      .post('/api/donate', {
+        campanha: key,
+        valor: 3
+      })
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    console.log('donate', key)
+  }
+
+  renderCampanha (key, campanha) {
     return (
-      <section className='page-section'>
+      <section className='page-section' key={key}>
         <div className='container'>
           <div className='product-item bg-faded'>
             <div className='product-item-title d-flex'>
@@ -44,7 +58,7 @@ class Campanhas extends Component {
                     </div>
                     <p>Meta: R$ 5.000,00 / Atingidos: R$ 2.500,00</p>
                     <div>
-                      <button className='btn btn-success'>Contribuir</button>
+                      <button className='btn btn-success' onClick={() => this.handleDonate(key)}>Contribuir</button>
                     </div>
                   </div>
                 }
@@ -90,7 +104,7 @@ class Campanhas extends Component {
         </section>
         {Object
           .keys(this.state.campanhas)
-          .map(key => this.renderCampanha(this.state.campanhas[key]))}
+          .map(key => this.renderCampanha(key, this.state.campanhas[key]))}
       </div>
     )
   }

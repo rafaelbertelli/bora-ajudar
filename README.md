@@ -2442,3 +2442,12 @@ In the future, we might start automatically compiling incompatible third-party m
 ## Something Missing?
 
 If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/facebookincubator/create-react-app/issues) or [contribute some!](https://github.com/facebookincubator/create-react-app/edit/master/packages/react-scripts/template/README.md)
+
+## Créditos para DevPleno
+
+
+https://www.devpleno.com/aula2-hr2/?inf_contact_key=1253497c45edbd3ee4e0a5346a9f7ec9ba39959eadb5df5de11fb6ae7dae2be1
+
+https://www.devpleno.com/aula3hr2/?inf_contact_key=fe33fb522ebaf638b64d6f2db09d9ddbbad3976860b3c40633760b2bff15e5da
+
+https://www.devpleno.com/hrsaulasextras/?inf_contact_key=319405d95712c30b5b41b8e1ec65b3636abcd958aa982b7164d1434dd4f683d1

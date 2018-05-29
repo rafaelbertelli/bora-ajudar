@@ -30,7 +30,7 @@ class AdminCampanhas extends React.Component {
     const comoDoar = this.state.tipo === 'produto' ? this.comoDoar.value : null
 
     base.push('campanhas', {
-      data: { nome, descricao, subtitulo, descricao, tipo, meta, doado, comoDoar },
+      data: { nome, descricao, subtitulo, tipo, meta, doado, comoDoar },
       then: err => {
         if(!err) {
           if(this.nome) {
