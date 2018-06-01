@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
 import base from './base'
 class Campanhas extends Component {
   constructor (props) {
@@ -23,15 +22,14 @@ class Campanhas extends Component {
     axios
       .post('/api/donate', {
         campanha: key,
-        valor: 3
+        valor: 0.10
       })
       .then(res => {
-        console.log(res.data)
+        console.log('donate ok', res.data)
       })
       .catch(err => {
-        console.log(err)
+        console.log('donate error', err)
       })
-    console.log('donate', key)
   }
 
   renderCampanha (key, campanha) {

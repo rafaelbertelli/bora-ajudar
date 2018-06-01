@@ -4,3 +4,13 @@ body {
   font-family: sans-serif;
   height: 100%;
 }
+
+a {
+  color: #12A9CC;
+  transition: color 0.25s ease-in-out;
+}
+
+a:hover {
+  color: #D2974E;
+  text-decoration: none;
+}

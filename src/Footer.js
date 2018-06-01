@@ -8,7 +8,8 @@ const Footer = () => (
           <img src='../img/software-do-bem-logo-320x128.png' alt='Logo Software do Bem' />
         </a>
         <br />
-        Desenvolvido durante o Hands-on ReactJS do DevPleno por Rafael Borges. Saiba mais.
+        Desenvolvido durante o Hands-on ReactJS do DevPleno por Rafael Borges<br />
+        Veja mais projetos no meu <a target='_blank' href='https://github.com/rafaelbertelli' alt='Github'>Github</a>
       </p>
     </div>
   </footer>

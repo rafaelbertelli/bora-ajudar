@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Menu = () => (
+const Menu = (props) => (
   <nav className='navbar navbar-expand-lg navbar-dark py-lg-4' id='mainNav'>
     <div className='container'>
       <Link to='/' className='navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none'>
@@ -13,7 +13,7 @@ const Menu = () => (
       <div className='collapse navbar-collapse' id='navbarResponsive'>
         <ul className='navbar-nav mx-auto'>
           <li className='nav-item active px-lg-4'>
-            <Link to='/' className='nav-link text-uppercase text-expanded'>Início<span className='sr-only'>(current)</span></Link>
+            <Link to='/' className='nav-link text-uppercase text-expanded'>Início</Link>
           </li>
           <li className='nav-item px-lg-4'>
             <Link to='/sobre' className='nav-link text-uppercase text-expanded'>Sobre</Link>
