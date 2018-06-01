@@ -34,10 +34,23 @@ request({
     'Content-Type': 'application/x-www-form-urlencoded; charset=ISO-8859-1'
   }
 })
-.then(xml => 
-  parse(xml, (err, json) => 
-    console.log(json)))
+.then(xml => parse(xml, (err, json) => console.log(json)))
 
+
+const notificationCode = '...'
+const consultaNotificacao = 'https://ws.pagseguro.uol.com.br/v3/transactions/notifications'
+request(consultaNotificacao+notificationCode+'?token='+SANDBOX_TOKEN+'&email='+SANDBOX_EMAIL)
+.then(notificationXML => {
+  parse(notificationXML, (err, transactionJSON) => {
+    const transaction = transactionJSON.transaction
+    const status = transaction.status[0]
+    const amount = transaction.grossAmount[0]
+    const campanhaId = transaction.items[0].item[0].id[0]
+    console.log(transaction, status, amount, campanhaId)
+  })
+})
+
+  
 // https://comunidade.pagseguro.uol.com.br/hc/pt-br/community/posts/221503208-O-servidor-remoto-retornou-um-erro-401-N%C3%A3o-Autorizado
 // https://sandbox.pagseguro.uol.com.br/vendedor/configuracoes.html
 // https://pagseguro.uol.com.br/preferencias/integracoes.jhtml

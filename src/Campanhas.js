@@ -25,7 +25,7 @@ class Campanhas extends Component {
         valor: 0.10
       })
       .then(res => {
-        console.log('donate ok', res.data)
+        window.location = res.data.url
       })
       .catch(err => {
         console.log('donate error', err)
