@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import base from './base'
+
 class Campanhas extends Component {
   constructor (props) {
     super(props)
@@ -33,6 +34,8 @@ class Campanhas extends Component {
   }
 
   renderCampanha (key, campanha) {
+    const porcentagem = ((parseFloat(campanha.doado) / parseFloat(campanha.meta)) * 100)
+
     return (
       <section className='page-section' key={key}>
         <div className='container'>
@@ -52,9 +55,10 @@ class Campanhas extends Component {
                 {campanha.tipo === 'doacao' &&
                   <div>
                     <div className='progress'>
-                      <div className='progress-bar bg-success' role='progressbar' style={{ width: '25%' }} aria-valuenow='25' aria-valuemin='0' aria-valuemax='100' />
+                      <div className='progress-bar bg-success progress-bar-striped progress-bar-animated' role='progressbar' style={{ width: porcentagem + '%' }} 
+                        aria-valuenow={porcentagem} aria-valuemin='0' aria-valuemax='100' />
                     </div>
-                    <p>Meta: R$ 5.000,00 / Atingidos: R$ 2.500,00</p>
+                    <p>Meta: R$ {campanha.meta} / Atingidos: R$ {campanha.doado}</p>
                     <div>
                       <button className='btn btn-success' onClick={() => this.handleDonate(key)}>Contribuir</button>
                     </div>

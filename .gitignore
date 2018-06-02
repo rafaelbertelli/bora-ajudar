@@ -1,7 +1,7 @@
 node_modules
 
-database.rules.json
+build
 
-functions/pagseguro.js
+database.rules.json
 
 **/*.log

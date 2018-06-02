@@ -1,4 +1,3 @@
-
 // Exemplo de integração com o Pagseguro
 
 const request = require('request-promise');
