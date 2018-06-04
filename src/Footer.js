@@ -9,7 +9,7 @@ const Footer = () => (
         </a>
         <br />
         Desenvolvido durante o Hands-on ReactJS do DevPleno por Rafael Borges<br />
-        Veja mais projetos no meu <a target='_blank' href='https://github.com/rafaelbertelli' alt='Github'>Github</a>
+        Veja mais projetos no meu <a target='_blank' rel="noopener noreferrer" href='https://github.com/rafaelbertelli' alt='Github'>Github</a>
       </p>
     </div>
   </footer>

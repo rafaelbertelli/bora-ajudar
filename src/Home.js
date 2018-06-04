@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Home = (props) => {
   return (
@@ -14,7 +15,7 @@ const Home = (props) => {
               </h2>
               <p className='mb-3'>Todos os trabalhos desenvolvidos pela Morada da Melhor Idade só é possível pela ajuda incansável de nossos voluntários.</p>
               <div className='intro-button mx-auto'>
-                <a className='btn btn-primary btn-xl' href='#'>Veja o que estamos precisando no momento</a>
+                <Link to='/campanhas' className='btn btn-primary btn-xl'>Veja o que estamos precisando no momento</Link>
               </div>
             </div>
           </div>

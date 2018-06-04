@@ -7,7 +7,8 @@ class Campanhas extends Component {
     super(props)
 
     this.state = {
-      campanhas: {}
+      campanhas: {},
+      isProcessing: false,
     }
   }
 
@@ -20,16 +21,18 @@ class Campanhas extends Component {
   }
 
   handleDonate (key) {
+    this.setState({ isProcessing: true })
     axios
-      .post('/api/donate', {
+      .post('https://us-central1-bora-ajudar-89.cloudfunctions.net/api/donate', {
         campanha: key,
-        valor: 0.10
+        valor: this.valor.value
       })
       .then(res => {
         window.location = res.data.url
       })
       .catch(err => {
         console.log('donate error', err)
+        this.setState({ isProcessing: false })
       })
   }
 
@@ -59,8 +62,16 @@ class Campanhas extends Component {
                         aria-valuenow={porcentagem} aria-valuemin='0' aria-valuemax='100' />
                     </div>
                     <p>Meta: R$ {campanha.meta} / Atingidos: R$ {campanha.doado}</p>
-                    <div>
-                      <button className='btn btn-success' onClick={() => this.handleDonate(key)}>Contribuir</button>
+                    <div className="input-group">
+                      <select className="custom-select" ref={ref => this.valor = ref}>
+                        <option value="0.01">R$ 0,01</option>
+                        <option value="0.05">R$ 0,05</option>
+                        <option value="2.00">R$ 2,00</option>
+                        <option value="5.00">R$ 5,00</option>
+                      </select>
+                      <div className="input-group-append">
+                        <button className="btn btn-outline-success" type="button" onClick={() => this.handleDonate(key)} disabled={this.state.isProcessing}>Contribuir</button>
+                      </div>
                     </div>
                   </div>
                 }

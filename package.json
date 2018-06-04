@@ -18,5 +18,6 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:5000/bora-ajudar-89/us-central1/"
+  "proxy__onlyLocalHost": "http://localhost:5000/bora-ajudar-89/us-central1/",
+  "proxy": "https://us-central1-bora-ajudar-89.cloudfunctions.net"
 }
