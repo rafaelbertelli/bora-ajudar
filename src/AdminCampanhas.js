@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import base from './base'
 
@@ -68,7 +69,7 @@ class AdminCampanhas extends React.Component {
       <li key={key}>
         {campanha.nome}
         &nbsp;
-        <button onClick={() => 1}>Editar</button>
+        <Link to={`/admin/campanhas/${key}`}>Editar</Link>
         <button onClick={() => this.removeCampanha(key)}>Remover</button>
       </li>
     )

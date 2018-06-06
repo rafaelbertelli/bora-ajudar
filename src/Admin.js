@@ -1,10 +1,10 @@
 import React from 'react'
-import { Route, Redirect } from 'react-router-dom'
+import { Route, Redirect, Switch } from 'react-router-dom'
 
 import { auth } from './base'
 
-import AdminHome from './AdminHome'
 import AdminCampanhas from './AdminCampanhas'
+import AdminEditarCampanha from './AdminEditarCampanha'
 
 class Admin extends React.Component {
   constructor (props) {
@@ -43,8 +43,10 @@ class Admin extends React.Component {
     return (
       <div className='card'>
         <h1>Painel Administrativo</h1>
-        <Route path='/' component={AdminHome} />
-        <Route path={`${this.props.match.url}/campanhas`} component={AdminCampanhas} />
+        <Switch>
+          <Route path={`${this.props.match.url}/campanhas/:id`} component={AdminEditarCampanha} />
+          <Route exact path={`${this.props.match.url}/campanhas`} component={AdminCampanhas} />
+        </Switch>
       </div>
     )
   }
