@@ -32,6 +32,7 @@ class Campanhas extends Component {
       })
       .catch(err => {
         console.log('donate error', err)
+        alert('Percebemos que o plano de hospedagem não permite este tipo de requisição. Contate o administrador para mais detalhes.')
         this.setState({ isProcessing: false })
       })
   }
